@@ -1,4 +1,4 @@
-let b1 = document.querySelector(".b1")
+    let b1 = document.querySelector(".b1")
     let b2 = document.querySelector(".b2")
     let b3 = document.querySelector(".b3")
 
@@ -23,14 +23,15 @@ let b1 = document.querySelector(".b1")
         secInterval = setInterval(() => {
             
             if (mili >= 10) {
-                a.textContent = `${mili}`
-            } else {
                 a.textContent = `0${mili}`
+            } else {
+                a.textContent = `00${mili}`
             }
 
-            if (mili === 99) {
+            if (mili === 100) {
                 mili = 0
                 value = value + 1
+                a.textContent = `100`
             }
             mili = mili + 1
             
@@ -40,8 +41,9 @@ let b1 = document.querySelector(".b1")
                 second.textContent = `0${value}`
             }
 
-            if (value === 59) {
+            if (value === 60) {
                 mValue = mValue + 1
+
             }
 
             if (mValue >= 10) {
