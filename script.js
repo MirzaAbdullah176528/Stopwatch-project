@@ -56,12 +56,14 @@ let b1 = document.querySelector(".b1")
                 a.textContent = `0${mili}`
             }
 
-            if (mili === 100) {
+            if (mili === 99) {
+
                 mili = 0
-                a.textContent = `00`
             }
             mili = mili + 1
-        }, 10)
+            
+            
+        }, 20)
     };
     
 
@@ -90,19 +92,22 @@ let b1 = document.querySelector(".b1")
     b3.addEventListener("click",func3)
 
 
-    addEventListener("keydown", () =>{
-        let secMili = mili.valueOf()
-        if(event.code === "Space"){
+    addEventListener("keydown", (e) =>{
+        if(e.code === "Space"){
             if(!secInterval && !miliInterval){
                 func1()
+                e.preventDefault()
             }
             else{
              func2() 
+             e.preventDefault()
             }
         }
     });
-    addEventListener('keydown', () =>{
-        if(event.code === "Backspace"){
+    addEventListener('keydown', (e) =>{
+        if(e.code === "Backspace"){
             func3()
+            e.preventDefault()
         }
     })
+
