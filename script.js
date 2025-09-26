@@ -60,7 +60,7 @@ let b1 = document.querySelector(".b1")
             }
 
             
-        }, 20)
+        }, 10)
     };
     
 
