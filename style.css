@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0rem;
+    padding: 0rem;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    color: rgb(202, 202, 202);
+}
+
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(21, 21, 21);
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(97, 22, 97);
+    padding: 2rem;
+    gap: 2rem;
+    border-radius: 1rem;
+    width: 40vw;
+
+    & h1{
+        font-size: 1.7rem;
+    }
+}
+.time{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(144, 40, 144);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    width: 30vw;
+    
+    & p{
+        font-size: 5rem;
+        font-weight: 500;
+        /* padding: 1rem; */
+        
+    }
+}
+.btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30vw;
+    gap: 2vw;
+    & button{
+        height: 2rem;
+        width: 9rem;
+        border-radius: 1rem;
+        border: 1px solid rgb(21, 21, 21);
+        background-color: rgb(144, 40, 144);
+        transition: ease-in-out 0.3s;
+        
+    }
+}
+button:hover{
+ background-color:rgb(21, 21, 21);
+ border: 1px solid rgb(144, 40, 144);
+}
+.sec{
+    padding-right: 30%;
+    padding-right: 0.5rem;
+}
+
+.control{
+    position: relative;
+
+}
+
+.mili{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem !important;
+    padding: 0.5rem;
+    background-color:rgb(168, 34, 168);
+    height: 3rem;
+    border-radius: 1rem;
+    
+}
