@@ -78,7 +78,7 @@ let b1 = document.querySelector(".b1")
 
 
     function func3(){
-        
+        func2()
         value = 0
         mValue = 0
         mili = 0
@@ -87,7 +87,7 @@ let b1 = document.querySelector(".b1")
         mint.textContent = `00:`
     };
 
-    b3.addEventListener("click",func3())
+    b3.addEventListener("click",func3)
 
 
     addEventListener("keydown", () =>{

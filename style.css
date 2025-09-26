@@ -5,7 +5,8 @@
     padding: 0rem;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
-    color: rgb(202, 202, 202);
+    color: #D2C1B6;
+
 }
 
 
@@ -14,28 +15,29 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: rgb(21, 21, 21);
+    background-color: #1B3C53;
 }
 .main{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: rgb(97, 22, 97);
+    background-color: #234C6A;
     padding: 2rem;
     gap: 2rem;
     border-radius: 1rem;
     width: 40vw;
 
     & h1{
-        font-size: 1.7rem;
+        font-size: 2rem;
+        letter-spacing:0.4rem;
     }
 }
 .time{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:rgb(144, 40, 144);
+    background-color:#456882;
     padding: 2rem;
     border-radius: 0.5rem;
     width: 30vw;
@@ -57,15 +59,15 @@ body{
         height: 2rem;
         width: 9rem;
         border-radius: 1rem;
-        border: 1px solid rgb(21, 21, 21);
-        background-color: rgb(144, 40, 144);
-        transition: ease-in-out 0.3s;
+        border: 1px solid #1B3C53;
+        background-color: #456882;
+        transition: ease-in-out 0.5s;
         
     }
 }
 button:hover{
- background-color:rgb(21, 21, 21);
- border: 1px solid rgb(144, 40, 144);
+ background-color:#1B3C53;
+ border: 2px solid #456882;
 }
 .sec{
     padding-right: 30%;
@@ -84,7 +86,7 @@ button:hover{
     justify-content: center;
     font-size: 2rem !important;
     padding: 0.5rem;
-    background-color:rgb(168, 34, 168);
+    background-color :#234C6A;
     height: 3rem;
     border-radius: 1rem;
     
