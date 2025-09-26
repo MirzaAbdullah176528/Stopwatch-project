@@ -21,6 +21,19 @@ let b1 = document.querySelector(".b1")
 
 
         secInterval = setInterval(() => {
+            
+            if (mili >= 10) {
+                a.textContent = `${mili}`
+            } else {
+                a.textContent = `0${mili}`
+            }
+
+            if (mili === 99) {
+                mili = 0
+                value = value + 1
+            }
+            mili = mili + 1
+            
             if (value >= 10) {
                 second.textContent = `${value}`
             } else {
@@ -46,22 +59,6 @@ let b1 = document.querySelector(".b1")
                 value = 0
             }
 
-            value = value + 1
-        }, 1000)
-
-        miliInterval = setInterval(() => {
-            if (mili >= 10) {
-                a.textContent = `${mili}`
-            } else {
-                a.textContent = `0${mili}`
-            }
-
-            if (mili === 99) {
-
-                mili = 0
-            }
-            mili = mili + 1
-            
             
         }, 20)
     };
