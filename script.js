@@ -1,112 +1,82 @@
-    let b1 = document.querySelector(".b1")
-    let b2 = document.querySelector(".b2")
-    let b3 = document.querySelector(".b3")
+let b1 = document.querySelector(".b1")
+let b2 = document.querySelector(".b2")
+let b3 = document.querySelector(".b3")
 
-    let second = document.querySelector(".sec")
-    let mint = document.querySelector(".mint")
-    let a = document.querySelector(".mili")
+let second = document.querySelector(".sec")
+let mint = document.querySelector(".mint")
+let a = document.querySelector(".mili")
 
-    let value = 0
-    let mValue = 0
-    let mili = 0
+let secInterval = null;
 
+let TimeElapsed = 0; 
+let startTime; 
 
-    let secInterval = null;
-    let miliInterval = null;
+function startTimer() {
 
-    function func1(){   
+    if (secInterval)
+        return;
 
-        if (secInterval || miliInterval) 
-            return;
+    startTime = (new Date()).getTime() - TimeElapsed;
 
+    secInterval = setInterval(() => {
 
-        secInterval = setInterval(() => {
-            
-            if (mili >= 10) {
-                a.textContent = `0${mili}`
-            } else {
-                a.textContent = `00${mili}`
-            }
+        const duration = (new Date()).getTime() - startTime;
+        TimeElapsed = duration; 
 
-            if (mili === 100) {
-                mili = 0
-                value = value + 1
-                a.textContent = `100`
-            }
-            mili = mili + 1
-            
-            if (value >= 10) {
-                second.textContent = `${value}`
-            } else {
-                second.textContent = `0${value}`
-            }
+        const totalSeconds = Math.floor(duration / 1000);
+        const totalMinutes = Math.floor(totalSeconds / 60);
 
-            if (value === 60) {
-                mValue = mValue + 1
+        const displayMili = duration % 1000;
+        const displaySeconds = totalSeconds % 60;
+        const displayMinutes = totalMinutes % 60; 
 
-            }
+        second.textContent = displaySeconds < 10 ? `0${displaySeconds}` : `${displaySeconds}`;
 
-            if (mValue >= 10) {
-                mint.textContent = `${mValue}:`
-            } else {
-                mint.textContent = `0${mValue}:`
-            }
+        a.textContent = displayMili.toString().padStart(3, '0');
+        
 
-            if (mValue === 60) {
-                mValue = 0
-                mint.textContent = `00:`
-            }
+        mint.textContent = displayMinutes < 10 ? `0${displayMinutes}:` : `${displayMinutes}:`;
 
-            if (value === 60) {
-                value = 0
-            }
-
-            
         }, 10)
-    };
-    
 
-    b1.addEventListener("click", func1)
+};
 
-    function func2(){
-        clearInterval(secInterval)
-        clearInterval(miliInterval)
-        secInterval = null
-        miliInterval = null
-    }
+function Stop_timer() {
+    clearInterval(secInterval)
+    secInterval = null;
+}
 
-    b2.addEventListener("click", func2)
-
-
-    function func3(){
-        func2()
-        value = 0
-        mValue = 0
-        mili = 0
-        second.textContent =`00`
-        a.textContent = `00`
-        mint.textContent = `00:`
-    };
-
-    b3.addEventListener("click",func3)
+function Reset() {
+    clearInterval(secInterval)
+    secInterval = null; 
+    TimeElapsed = 0;    
 
 
-    addEventListener("keydown", (e) =>{
-        if(e.code === "Space"){
-            if(!secInterval && !miliInterval){
-                func1()
-                e.preventDefault()
-            }
-            else{
-             func2() 
-             e.preventDefault()
-            }
-        }
-    });
-    addEventListener('keydown', (e) =>{
-        if(e.code === "Backspace"){
-            func3()
+    second.textContent = `00`
+    a.textContent = `000`
+    mint.textContent = `00:`
+};
+
+
+b1.addEventListener("click", () => startTimer())
+b2.addEventListener("click", Stop_timer)
+b3.addEventListener("click", Reset)
+
+addEventListener("keydown", (e) => {
+    if (e.code === "Space") {
+        if (!secInterval) {
+            startTimer()
             e.preventDefault()
         }
-    })
-
+        else {
+            Stop_timer()
+            e.preventDefault()
+        }
+    }
+});
+addEventListener('keydown', (e) => {
+    if (e.code === "Backspace") {
+        Reset()
+        e.preventDefault()
+    }
+})
