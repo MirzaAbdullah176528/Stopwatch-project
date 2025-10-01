@@ -8,7 +8,7 @@ let a = document.querySelector(".mili")
 
 let secInterval = null;
 
-let TimeElapsed = 0; 
+let timeLeft = 0; 
 let startTime; 
 
 function startTimer() {
@@ -16,12 +16,12 @@ function startTimer() {
     if (secInterval)
         return;
 
-    startTime = (new Date()).getTime() - TimeElapsed;
+    startTime = (new Date()).getTime() - timeLeft;
 
     secInterval = setInterval(() => {
 
         const duration = (new Date()).getTime() - startTime;
-        TimeElapsed = duration; 
+        timeLeft = duration; 
 
         const totalSeconds = Math.floor(duration / 1000);
         const totalMinutes = Math.floor(totalSeconds / 60);
@@ -49,7 +49,7 @@ function Stop_timer() {
 function Reset() {
     clearInterval(secInterval)
     secInterval = null; 
-    TimeElapsed = 0;    
+    timeLeft = 0;    
 
 
     second.textContent = `00`
