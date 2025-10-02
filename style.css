@@ -41,21 +41,13 @@ body{
     flex-direction: column;
     background-color: #234C6A;
     padding: 2rem;
+    margin: 0rem;
     gap: 2rem;
     border-radius: 1rem;
     width: 40vw;
+    height: 100vh;
     & h1{
-        font-size: 2rem;
-    }
-}
-
-
-@keyframes main {
-    0% {
-        padding-top: 18vh;  
-    }
-    100% {
-        padding-top: 2rem;
+        font-size: 3rem;
     }
 }
 
@@ -72,8 +64,6 @@ body{
     & p{
         font-size: 5rem;
         font-weight: 500;
-        /* padding: 1rem; */
-        
     }
 }
 .btns{
@@ -83,12 +73,14 @@ body{
     width: 30vw;
     gap: 2vw;
     & button{
-        height: 2rem;
+        padding: 0.5rem;
+        height: 2.5rem;
         width: 9rem;
         border-radius: 1rem;
         border: 1px solid #1B3C53;
         background-color: #456882;
         transition: ease-in-out 0.5s;
+        font-weight: 500;
         
     }
 }
@@ -102,47 +94,43 @@ button:hover{
 }
 
 .control{
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 6rem;
-    height: 3rem;
+    width: 3rem;
+    height: 1.5rem;
+    padding: 1rem;
     background-color :#234C6A;
     border-radius:1rem;
 
 }
 
 .mili{
-    font-size: 2rem !important;
-    height: 3rem;
-    margin: 0.6rem 0rem 0rem;
-    border-radius: 1rem;
+    font-size: 1rem !important;
+    height: 2rem;
+    margin: 0.8rem 0rem 0rem;
+    border-radius: 0.5rem;
 }
 .leap{
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    width: 30vw;
-    background-color:#456882 ;
+    width: 40vw;
+    background-color:#456882;
     color: black;
     height: 100vh;
     border-radius: 1rem;
     margin: 1rem;
     overflow: auto;
     padding: 1rem;
-    animation: mainLeap 1s ease-in-out forwards; 
-    justify-content: flex-start;
-        resize: vertical;
-    outline: none;
 }
 
 .leap::-webkit-scrollbar {
     width: 8px;
 }
 
-
+/* 
 @keyframes mainLeap {
     0% {
         padding-top: 10vh;  
@@ -151,7 +139,7 @@ button:hover{
     100% {
         padding-top: 0.5rem;
     }
-}
+} */
 .leap::-webkit-scrollbar{
     width: 0px;
 }

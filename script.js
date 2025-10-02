@@ -75,7 +75,7 @@ function leap_value() {
 
     leapDiv.style.display = "flex";
     leapDiv.innerHTML += `
-        <p style="color:black;
+        <p style="
         display:flex;
         align-items:center;
         justify-content:center;
