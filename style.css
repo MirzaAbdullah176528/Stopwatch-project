@@ -9,6 +9,17 @@
 
 }
 
+.body {
+  transform: scale(0.9); 
+}
+html {
+  font-size: 14px; 
+}
+body{
+    margin: 0rem;
+    padding: 0rem;
+    background-color: #1B3C53;
+}
 
 .body {
     display: flex;
@@ -123,7 +134,15 @@ button:hover{
     padding: 1rem;
     animation: mainLeap 1s ease-in-out forwards; 
     justify-content: flex-start;
+        resize: vertical;
+    outline: none;
 }
+
+.leap::-webkit-scrollbar {
+    width: 8px;
+}
+
+
 @keyframes mainLeap {
     0% {
         padding-top: 10vh;  

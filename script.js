@@ -65,27 +65,31 @@ function Reset() {
     };
 
 function leap_value() {
-    let duration=timeLeft
-        const totalSeconds = Math.floor(duration / 1000);
-        const totalMinutes = Math.floor(totalSeconds / 60);
+    let duration = timeLeft
+    const totalSeconds = Math.floor(duration / 1000);
+    const totalMinutes = Math.floor(totalSeconds / 60);
 
-        const displayMili = duration % 1000;
-        const displaySeconds = totalSeconds % 60;
-        const displayMinutes = totalMinutes % 60;
-        leapDiv.style.display="flex"
-    leapDiv.innerHTML += `          
-                                    <p style="color:black;
-                                    display:flex;
-                                    align-item:center;
-                                    justify-content:center;
-                                    margin: 0.5rem;
-                                    scroll-snap-type: mandatory;
-                                    background-color: #1B3C53;
-                                    padding:0.3rem;
-                                    border-radius:0.5rem;
-                                    width:25vw;"
-        >Mints:${displayMinutes} -- Seconds:${displaySeconds} -- MiliSec:${displayMili}</p>`
-        }
+    const displayMili = duration % 1000;
+    const displaySeconds = totalSeconds % 60;
+    const displayMinutes = totalMinutes % 60;
+
+    leapDiv.style.display = "flex";
+    leapDiv.innerHTML += `
+        <p style="color:black;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        margin: 0.5rem;
+        background-color: #1B3C53;
+        padding:0.3rem;
+        border-radius:0.5rem;
+        width:25vw;">
+        Mints:${displayMinutes} -- Seconds:${displaySeconds} -- MiliSec:${displayMili}
+        </p>`;
+
+    leapDiv.scrollTop = leapDiv.scrollHeight;
+}
+
 
 
 b1.addEventListener("click", () => startTimer())
@@ -119,5 +123,6 @@ addEventListener("keydown",(e) =>{
         document.body.style.animation="main 1s ease-in-out forwards;"
         document.body.style.justifyContent = "flex-start;"
         leap_value()
+        e.preventDefault()
     }
 })
